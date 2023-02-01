@@ -1,0 +1,3 @@
+SELECT id, name, phone FROM account
+
+SELECT id, name, mailingcity FROM contact WHERE mailingcity = ''

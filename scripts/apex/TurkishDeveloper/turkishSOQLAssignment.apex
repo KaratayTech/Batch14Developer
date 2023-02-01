@@ -1,0 +1,1 @@
+Turkish_SOQL_Assignment.findEducation();

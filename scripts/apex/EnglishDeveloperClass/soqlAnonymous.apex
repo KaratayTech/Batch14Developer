@@ -1,0 +1,10 @@
+SoqlDemo.account_SOQL_1();
+SoqlDemo.account_SOQL_11();
+SoqlDemo.account_SOQL_2();
+SoqlDemo.account_SOQL_3();
+SoqlDemo.accountFilter_SOQL('sforce');
+SoqlDemo.accountFilter_SOQL('GenePoint');
+SoqlDemo.accountFilter_SOQL('sfdc');
+SoqlDemo.childToParent_SOQL1();
+SoqlDemo.parentToChild_SOQL1();
+SoqlDemo.parentToChild_SOQL2();
