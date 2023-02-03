@@ -3,6 +3,7 @@ public class CalculatorSt {
         return a +b;
     }
 //  there is a parameter here.
+// this is a private method.
     public static integer add(integer x, integer y, integer z) {
         return x+y+z;
     }
