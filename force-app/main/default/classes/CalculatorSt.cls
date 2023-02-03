@@ -1,9 +1,11 @@
 public class CalculatorSt {
+    // paratemers: two integer
+    // returns: sum of two integers
     public static integer add(integer a, integer b) {
         return a +b;
     }
 //  there is a parameter here.
-// this is a private method.
+//  this is a private static method.
     public static integer add(integer x, integer y, integer z) {
         return x+y+z;
     }
