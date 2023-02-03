@@ -1,7 +1,7 @@
 ## Updated readme
 
 - A developer changed it.
-- Again...
+- Again... But it's a test.
 
 # Salesforce DX Project: Next Steps
 
