@@ -421,17 +421,46 @@
 
 
 
+// trigger AccountTrigger on Account (before insert, before update, after insert, after update) {
+//     system.debug('----- trigger start -----');
+   
+//     if (Trigger.isBefore) {
+//         // call handler method
+//         AccountTriggerHandler.updateDescription(Trigger.New, Trigger.Old, Trigger.NewMap, Trigger.Oldmap);
+//     }
+
+//     if(Trigger.isAfter && Trigger.isUpdate){
+//         // call handler method to update vip of all contacts...
+//         AccountTriggerHandler.updateVIPforContacts(Trigger.New, Trigger.Old, Trigger.NewMap, Trigger.Oldmap);
+//     }
+
+//     if(Trigger.isAfter && Trigger.isUpdate){
+//        // call handler method to update MailingCity of all contacts... 
+//        AccountTriggerHandler.updateBillingCityContacts(Trigger.New, Trigger.Old, Trigger.NewMap, Trigger.Oldmap);
+//     }
+
+
+// }
+
 trigger AccountTrigger on Account (before insert, before update, after insert, after update) {
     system.debug('----- trigger start -----');
    
     if (Trigger.isBefore) {
-        // call handler method
+        //call handler method
         AccountTriggerHandler.updateDescription(Trigger.New, Trigger.Old, Trigger.NewMap, Trigger.Oldmap);
     }
 
-    system.debug('===== trigger end =====');
-
+    if (Trigger.isAfter && Trigger.isUpdate) {
+        //call handler method to update vip of all contacts.
+        AccountTriggerHandler.updateVIPforContacts(Trigger.New, Trigger.Old, Trigger.NewMap, Trigger.Oldmap);
     }
+
+    if(Trigger.isInsert && Trigger.isAfter) {
+        AccountHandler.createContact(Trigger.new);
+    }
+}
+
+    
 
     
 
