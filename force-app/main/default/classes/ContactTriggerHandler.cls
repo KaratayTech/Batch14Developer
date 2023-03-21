@@ -10,11 +10,15 @@ public class ContactTriggerHandler {
         }
     }
 
+    // there was no cutom label error message before when we created this validation method.
+    // we used to write this manually, but we wanted to this dinamic.
+    // so, in this example we added, custom label message to adderror part. 3/7/2023 class.
     public static void contactUpdateValidation2(list<contact> conTriggerNew, list<contact> conTriggerOld, Map<id, contact> conTriggerNewMap, map<id, contact> conTriggerOldMap){
+        string errorMessage = system.label.ContactValidation2;
         for(contact eachContact : conTriggerNew){
             if(eachContact.LeadSource != conTriggerOldMap.get(eachContact.Id).LeadSource){
                 // throw error on LEADSOURCE field
-                eachContact.LeadSource.AddError('CANNOT UPDATE LEAD SOURCE, PLEASE USER!!!');
+                eachContact.LeadSource.AddError(errorMessage);
     
             }
         }

@@ -458,7 +458,12 @@ trigger AccountTrigger on Account (before insert, before update, after insert, a
     if(Trigger.isInsert && Trigger.isAfter) {
         AccountHandler.createContact(Trigger.new);
     }
+
+    if(Trigger.isInsert && Trigger.isBefore){
+        AccountStatusForContactAssginment.catchForStatusOnContact(Trigger.new, Trigger.old, Trigger.newMap, Trigger.oldMap);
+    }
 }
+
 
     
 
